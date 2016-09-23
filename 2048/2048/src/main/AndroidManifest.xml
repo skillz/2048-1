@@ -2,6 +2,14 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.tpcstld.twozerogame">
 
+    <uses-sdk
+        android:minSdkVersion="16"
+        android:targetSdkVersion="22" />
+
+    <android:uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <android:uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <android:uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/logo_2048"
@@ -13,10 +21,37 @@
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!-- Make sure the Skillz <meta-data> tags are all direct children of the <application> tag, otherwise the game won't run properly! -->
+        <meta-data
+            android:name="skillz_game_id"
+            android:value="2112" />
+        <meta-data
+            android:name="skillz_production"
+            android:value="false" />
+        <meta-data
+            android:name="skillz_orientation"
+            android:value="portrait" />
+        <meta-data
+            android:name="skillz_game_activity"
+            android:value="com.tpcstld.twozerogame.GameActivity" />
+        <meta-data
+            android:name="skillz_allow_exit"
+            android:value="false" />
+        <!-- Google Cloud Messaging -->
+        <permission
+            android:name="com.tpcstld.twozerogame.gcm.permission.C2D_MESSAGE"
+            android:protectionLevel="signature" />
+
+        <uses-permission android:name="com.tpcstld.twozerogame.gcm.permission.C2D_MESSAGE" />
+
+        <meta-data
+            android:name="skillz_gcm_sender_id"
+            android:resource="@string/google_api_project_number" />
+
     </application>
 
 </manifest>
