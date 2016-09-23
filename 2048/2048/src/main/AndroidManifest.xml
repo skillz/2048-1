@@ -25,6 +25,15 @@
             </intent-filter>
         </activity>
 
+        <activity
+            android:name=".GameActivity"
+            android:label="@string/app_name" >
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="com.tpctld.twozerogame.Game" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
         <!-- Make sure the Skillz <meta-data> tags are all direct children of the <application> tag, otherwise the game won't run properly! -->
         <meta-data
             android:name="skillz_game_id"

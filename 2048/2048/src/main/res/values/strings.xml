@@ -11,8 +11,8 @@
     <string name="google_api_project_number">1234567890</string>
 
     <!-- Confirmation dialog-->
-    <string name="reset">Reset</string>
+    <string name="reset">Abort</string>
     <string name="continue_game">Cancel</string>
-    <string name="reset_dialog_title">Reset game?</string>
-    <string name="reset_dialog_message">Are you sure you wish to reset the game?</string>
+    <string name="reset_dialog_title">Abort game?</string>
+    <string name="reset_dialog_message">Are you sure you wish to abort the game?</string>
 </resources>
