@@ -5,6 +5,8 @@ import android.content.DialogInterface;
 import android.view.MotionEvent;
 import android.view.View;
 
+import com.skillz.Skillz;
+
 class InputListener implements View.OnTouchListener {
 
     private static final int SWIPE_MIN_DISTANCE = 0;
@@ -47,7 +49,7 @@ class InputListener implements View.OnTouchListener {
                 lastDy = 0;
                 hasMoved = false;
                 beganOnIcon = iconPressed(mView.sXNewGame, mView.sYIcons)
-                              || iconPressed(mView.sXUndo, mView.sYIcons);
+                        || iconPressed(mView.sXUndo, mView.sYIcons);
                 return true;
             case MotionEvent.ACTION_MOVE:
                 x = event.getX();
@@ -124,7 +126,12 @@ class InputListener implements View.OnTouchListener {
                                     .setPositiveButton(R.string.reset, new DialogInterface.OnClickListener() {
                                         @Override
                                         public void onClick(DialogInterface dialog, int which) {
-                                            mView.game.newGame();
+                                            if (Skillz.isMatchInProgress()) {
+                                                // Aborting Skillz Game
+                                                Skillz.abortMatch(GameActivity.sInstance);
+                                            } else {
+                                                mView.game.newGame();
+                                            }
                                         }
                                     })
                                     .setNegativeButton(R.string.continue_game, null)
