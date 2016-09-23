@@ -1,5 +1,9 @@
 package com.tpcstld.twozerogame;
 
+import android.util.Log;
+
+import com.skillz.Skillz;
+
 import java.util.ArrayList;
 
 public class Grid {
@@ -19,7 +23,9 @@ public class Grid {
     public Cell randomAvailableCell() {
         ArrayList<Cell> availableCells = getAvailableCells();
         if (availableCells.size() >= 1) {
-            return availableCells.get((int) Math.floor(Math.random() * availableCells.size()));
+
+            // Used Skillz Random Float
+            return availableCells.get((int) Math.floor(Skillz.getRandom().nextFloat() * availableCells.size()));
         }
         return null;
     }
@@ -134,3 +140,4 @@ public class Grid {
         }
     }
 }
+    Contact GitHub API Training Shop Blog About

@@ -56,6 +56,7 @@ public class MainGame {
         mContext = context;
         mView = view;
         endingMaxValue = (int) Math.pow(2, view.numCellTypes - 1);
+        Log.d("mytag", "MAIN GAME IS CALLED");
     }
 
     public void newGame() {
@@ -90,7 +91,8 @@ public class MainGame {
     private void addRandomTile() {
         if (grid.isCellsAvailable()) {
 
-            int value = Math.random() < 0.9 ? 2 : 4;
+            // Used Skillz Random Next Float
+            int value = Skillz.getRandom().nextFloat() < 0.9 ? 2 : 4;
             Tile tile = new Tile(grid.randomAvailableCell(), value);
             spawnTile(tile);
         }
