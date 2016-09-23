@@ -8,6 +8,7 @@
     <string name="go_on">Tap to Continue</string>
     <string name="for_now">For now…</string>
     <string name="endless">"Endless" Mode</string>
+    <string name="google_api_project_number">1234567890</string>
 
     <!-- Confirmation dialog-->
     <string name="reset">Reset</string>
