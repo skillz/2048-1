@@ -23,6 +23,7 @@ repositories {
     flatDir {
         dirs 'libs'
     }
+    jcenter()
 }
 
 dependencies {
@@ -40,4 +41,8 @@ dependencies {
     compile 'com.android.support:appcompat-v7:22.2.0'
     compile 'com.android.support:recyclerview-v7:22.2.0'
     compile 'com.google.android.gms:play-services-gcm:7.5.0'
+
+    compile('com.mopub:mopub-sdk:4.9.0@aar') {
+        transitive = true
+    }
 }
