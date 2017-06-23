@@ -29,8 +29,6 @@ public class GameActivity extends ActionBarActivity {
 
         // create an Instance
         sInstance = this;
-        // Skillz Start match call
-        Skillz.startMatch(this);
 
         // Using game rules that you specified on Skillz Developer Portal
         Skillz.getMatchRules();
