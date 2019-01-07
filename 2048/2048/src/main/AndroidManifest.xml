@@ -1,15 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.tpcstld.twozerogame">
+    <uses-sdk android:minSdkVersion="19" android:targetSdkVersion="27" />
 
     <application
         android:allowBackup="true"
         android:icon="@drawable/logo_2048"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme"
+        android:name="android.support.multidex.MultiDexApplication">
+
+        <meta-data android:name="skillz_game_id" android:value="2112" />
+        <meta-data android:name="skillz_production" android:value="false" />
+        <meta-data android:name="skillz_game_activity" android:value="com.tpcstld.twozerogame.MainActivity" />
+        <meta-data android:name="skillz_allow_exit" android:value="false" />
+
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
+            android:launchMode="singleTask"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
