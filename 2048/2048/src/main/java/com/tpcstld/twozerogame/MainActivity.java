@@ -3,10 +3,11 @@ package com.tpcstld.twozerogame;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.support.v7.app.AppCompatActivity;
 import android.view.KeyEvent;
 
-public class MainActivity extends AppCompatActivity {
+import com.skillz.SkillzActivity;
+
+public class MainActivity extends SkillzActivity {
 
     private static final String WIDTH = "width";
     private static final String HEIGHT = "height";
