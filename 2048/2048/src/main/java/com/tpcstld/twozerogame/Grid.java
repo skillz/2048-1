@@ -1,5 +1,7 @@
 package com.tpcstld.twozerogame;
 
+import com.skillz.Skillz;
+
 import java.util.ArrayList;
 
 public class Grid {
@@ -19,7 +21,7 @@ public class Grid {
     public Cell randomAvailableCell() {
         ArrayList<Cell> availableCells = getAvailableCells();
         if (availableCells.size() >= 1) {
-            return availableCells.get((int) Math.floor(Math.random() * availableCells.size()));
+            return availableCells.get(Skillz.getRandom().nextInt(availableCells.size()));
         }
         return null;
     }
