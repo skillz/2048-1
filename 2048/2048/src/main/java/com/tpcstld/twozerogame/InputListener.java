@@ -1,9 +1,14 @@
 package com.tpcstld.twozerogame;
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.view.MotionEvent;
 import android.view.View;
+
+import com.skillz.Skillz;
+
+import java.math.BigDecimal;
 
 class InputListener implements View.OnTouchListener {
 
@@ -12,6 +17,7 @@ class InputListener implements View.OnTouchListener {
     private static final int MOVE_THRESHOLD = 250;
     private static final int RESET_STARTING = 10;
     private final MainView mView;
+    private final Activity mActivity;
     private float x;
     private float y;
     private float lastDx;
@@ -28,9 +34,10 @@ class InputListener implements View.OnTouchListener {
     // the press on an icon.
     private boolean beganOnIcon = false;
 
-    public InputListener(MainView view) {
+    public InputListener(MainView view, Activity activity) {
         super();
         this.mView = view;
+        this.mActivity = activity;
     }
 
     public boolean onTouch(View view, MotionEvent event) {
@@ -124,7 +131,8 @@ class InputListener implements View.OnTouchListener {
                                     .setPositiveButton(R.string.reset, new DialogInterface.OnClickListener() {
                                         @Override
                                         public void onClick(DialogInterface dialog, int which) {
-                                            mView.game.newGame();
+                                            Skillz.abortMatch(mActivity);
+                                            mActivity.finish();
                                         }
                                     })
                                     .setNegativeButton(R.string.continue_game, null)

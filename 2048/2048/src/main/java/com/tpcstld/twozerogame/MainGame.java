@@ -1,9 +1,13 @@
 package com.tpcstld.twozerogame;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 
+import com.skillz.Skillz;
+
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -37,6 +41,7 @@ public class MainGame {
     final int numSquaresX = 4;
     final int numSquaresY = 4;
     private final Context mContext;
+    private final Activity mActivity;
     private final MainView mView;
     public Grid grid = null;
     public AnimationGrid aGrid;
@@ -46,8 +51,9 @@ public class MainGame {
     public long lastScore = 0;
     private long bufferScore = 0;
 
-    public MainGame(Context context, MainView view) {
-        mContext = context;
+    public MainGame(Activity activity, MainView view) {
+        mContext = activity;
+        mActivity = activity;
         mView = view;
         endingMaxValue = (int) Math.pow(2, view.numCellTypes - 1);
     }
@@ -256,6 +262,8 @@ public class MainGame {
             highScore = score;
             recordHighScore();
         }
+        Skillz.reportScore(mActivity, new BigDecimal(score));
+        mActivity.finish();
     }
 
     private Cell getVector(int direction) {
