@@ -90,7 +90,8 @@ public class MainGame {
 
     private void addRandomTile() {
         if (grid.isCellsAvailable()) {
-            int value = Math.random() < 0.9 ? 2 : 4;
+            // nextInt is a half-open interval [min, max) where max is exclusive - so this generates either 1 or 2
+            int value = Skillz.getRandom().nextInt(1, 3) * 2;
             Tile tile = new Tile(grid.randomAvailableCell(), value);
             spawnTile(tile);
         }
@@ -159,7 +160,7 @@ public class MainGame {
             canUndo = false;
             aGrid.cancelAnimations();
             grid.revertTiles();
-            score = lastScore;
+            setScore(lastScore);
             gameState = lastGameState;
             mView.refreshLastTime = true;
             mView.invalidate();
@@ -219,7 +220,7 @@ public class MainGame {
                                 SPAWN_ANIMATION_TIME, MOVE_ANIMATION_TIME, null);
 
                         // Update the score
-                        score = score + merged.getValue();
+                        setScore(score + merged.getValue());
                         highScore = Math.max(score, highScore);
 
                         // The mighty 2048 tile
@@ -363,5 +364,10 @@ public class MainGame {
 
     public boolean canContinue() {
         return !(gameState == GAME_ENDLESS || gameState == GAME_ENDLESS_WON);
+    }
+
+    private void setScore(long newScore) {
+        this.score = newScore;
+        Skillz.updatePlayersCurrentScore(mActivity, new BigDecimal(this.score));
     }
 }
