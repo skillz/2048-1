@@ -1,5 +1,6 @@
 package com.tpcstld.twozerogame;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
@@ -71,12 +72,15 @@ public class MainView extends View {
     private int titleWidthHighScore;
     private int titleWidthScore;
 
-    public MainView(Context context) {
-        super(context);
+    private final Activity mActivity;
 
-        Resources resources = context.getResources();
+    public MainView(Activity activity) {
+        super(activity);
+        mActivity = activity;
+
+        Resources resources = mActivity.getResources();
         //Loading resources
-        game = new MainGame(context, this);
+        game = new MainGame(mActivity, this);
         try {
             //Getting assets
             backgroundRectangle = resources.getDrawable(R.drawable.background_rectangle);
@@ -89,7 +93,7 @@ public class MainView extends View {
         } catch (Exception e) {
             Log.e(TAG, "Error getting assets?", e);
         }
-        setOnTouchListener(new InputListener(this));
+        setOnTouchListener(new InputListener(this, mActivity));
         game.newGame();
     }
 
