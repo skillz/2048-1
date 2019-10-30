@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "132528198279",
+    "firebase_url": "https://project-4063467257623242461.firebaseio.com",
+    "project_id": "project-4063467257623242461",
+    "storage_bucket": "project-4063467257623242461.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:132528198279:android:0c347c6a3a278e1a",
+        "android_client_info": {
+          "package_name": "com.skillz.examples.cordova2048"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "132528198279-9go6md1m7g2kpgtsjvk1qdbctn28cnd8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDhjHMQbHjQE29nc4qqTOhN-CvsgpUmn9I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "132528198279-9go6md1m7g2kpgtsjvk1qdbctn28cnd8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:132528198279:android:8d806f772c84f87c",
+        "android_client_info": {
+          "package_name": "com.tpcstld.twozerogame"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "132528198279-9go6md1m7g2kpgtsjvk1qdbctn28cnd8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDhjHMQbHjQE29nc4qqTOhN-CvsgpUmn9I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "132528198279-9go6md1m7g2kpgtsjvk1qdbctn28cnd8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
