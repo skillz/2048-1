@@ -10,10 +10,11 @@
         android:name="android.support.multidex.MultiDexApplication">
 
         <meta-data android:name="skillz_game_id" android:value="5425" />
-      <meta-data android:name="skillz_server_url" android:value="https://staging.skillz.com" />
+        <meta-data android:name="skillz_server_url" android:value="https://staging.skillz.com" />
         <meta-data android:name="skillz_production" android:value="false" />
         <meta-data android:name="skillz_game_activity" android:value="com.tpcstld.twozerogame.MainActivity" />
         <meta-data android:name="skillz_allow_exit" android:value="false" />
+        <meta-data android:name="skillz_orientation" android:value="portrait" />
 
         <activity
             android:name=".LaunchActivity"
@@ -38,5 +39,20 @@
             </intent-filter>
         </activity>
     </application>
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="com.android.vending.BILLING" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+
+    <!-- for card.io card scanning -->
+    <uses-permission android:name="android.permission.VIBRATE" />
 
 </manifest>
