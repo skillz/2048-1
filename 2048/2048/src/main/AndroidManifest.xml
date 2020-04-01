@@ -11,7 +11,7 @@
 
         <uses-library android:name="org.apache.http.legacy" android:required="false"/>
 
-        <meta-data android:name="skillz_game_id" android:value="2112" />
+        <meta-data android:name="skillz_game_id" android:value="5587" />
         <meta-data android:name="skillz_production" android:value="false" />
         <meta-data android:name="skillz_game_activity" android:value="com.tpcstld.twozerogame.MainActivity" />
         <meta-data android:name="skillz_allow_exit" android:value="false" />
